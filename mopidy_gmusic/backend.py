@@ -47,8 +47,7 @@ class GMusicBackend(
         self.uri_schemes = ['gmusic']
 
     def on_start(self):
-        self.session.login(self.config['gmusic']['initial_code'],
-                           self.config['gmusic']['refresh_token'],
+        self.session.login(self.config['gmusic']['refresh_token'],
                            self.config['gmusic']['deviceid'])
 
         # wait a few seconds to let mopidy settle
