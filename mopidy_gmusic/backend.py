@@ -52,10 +52,11 @@ class GMusicBackend(
 
         # wait a few seconds to let mopidy settle
         # then refresh google music content asynchronously
-        self._refresh_library_timer = RepeatingTimer(
-            self._refresh_library,
-            self._refresh_library_rate)
-        self._refresh_library_timer.start()
+        self._refresh_library()
+        #self._refresh_library_timer = RepeatingTimer(
+        #    self._refresh_library,
+        #    self._refresh_library_rate)
+        #self._refresh_library_timer.start()
         # schedule playlist refresh as desired
         if self._refresh_playlists_rate > 0:
             self._refresh_playlists_timer = RepeatingTimer(
